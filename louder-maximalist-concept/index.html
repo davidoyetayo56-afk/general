@@ -72,7 +72,14 @@ h1{font-size:clamp(3.2rem,17vw,4.2rem);margin-top:125px}
 </style>
 </head>
 <body>
-<div class="noise" aria-hidden="true"></div><div class="cursor-dot" id="cursor"></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="noise" aria-hidden="true"></div>
+<div class="dopamine-watermark" aria-label="Dopamine trademark">DOPAMINE<span>®</span></div>
+<style>
+.dopamine-watermark{position:fixed;right:18px;bottom:16px;z-index:30;pointer-events:none;user-select:none;font:800 11px/1 'DM Mono',monospace;letter-spacing:.16em;color:var(--ink);background:var(--lime);border:1px solid var(--ink);border-radius:999px;padding:10px 12px;box-shadow:3px 3px 0 var(--ink);opacity:.9;transform:rotate(-3deg)}
+.dopamine-watermark span{font-size:8px;vertical-align:top;margin-left:2px}
+@media(max-width:700px){.dopamine-watermark{right:10px;bottom:10px;font-size:9px;padding:8px 10px;letter-spacing:.12em;box-shadow:2px 2px 0 var(--ink)}}
+</style>
+<div class="cursor-dot" id="cursor"></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
 <header class="topbar"><a class="logo" href="#home" aria-label="Louder home">LOUDER<sup>®</sup></a><button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav" style="display:none">☰</button><nav class="nav" id="mainNav" aria-label="Main navigation"><a href="#work">Selected work</a><a href="#services">What we do</a><a href="#about">Our energy</a><a class="nav-cta" href="#contact">Start something ↗</a></nav></header>
 <main>
 <section class="hero" id="home"><div class="hero-top"><span class="eyebrow">Independent creative studio<br>Available for the unexpected</span><span class="eyebrow availability"><i class="dot"></i> Lagos · Everywhere</span></div>
