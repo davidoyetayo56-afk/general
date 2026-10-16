@@ -583,10 +583,19 @@ body{background-color:#f7f0df;color:#14110f;background-image:radial-gradient(#14
  body,body a,body button,body input,body textarea,body select{cursor:auto}
 }
 
+
+/* Real brush paint: thick connected strokes, not floating particles */
+#brush-paint-canvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:998;pointer-events:none;display:block}
+.brush-paint-fleck{display:none!important}
+.custom-cursor-brush{width:52px;height:52px;filter:drop-shadow(1px 2px 0 #14110f);transform-origin:7px 38px}
+.custom-cursor-brush svg{width:52px;height:52px}
+.custom-cursor-brush.hovering{filter:drop-shadow(2px 3px 0 #ff3b24);scale:1.08}
+@media(hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){#brush-paint-canvas{display:none!important}}
+
 </style>
 </head>
 <body>
-<div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div><div class="custom-cursor-brush" aria-hidden="true"><svg viewBox="0 0 44 44" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><path d="M7 38 10 30 28 12 33 17 15 35Z" fill="#d9ff00" stroke="#14110f" stroke-width="2" stroke-linejoin="round"/><path d="m10 30 5 5" stroke="#14110f" stroke-width="2"/><path d="m27 13 4-4q2-2 4 0l3 3q2 2 0 4l-4 4Z" fill="#ff3b24" stroke="#14110f" stroke-width="2" stroke-linejoin="round"/><path d="m30 11 6 6" stroke="#fff9ec" stroke-width="1.4" stroke-linecap="round"/><path d="m7 38 8-3-5-5Z" fill="#14110f"/></svg></div>
+<div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div><canvas id="brush-paint-canvas" aria-hidden="true"></canvas><div class="custom-cursor-brush" aria-hidden="true"><svg viewBox="0 0 44 44" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><path d="M7 38 10 30 28 12 33 17 15 35Z" fill="#d9ff00" stroke="#14110f" stroke-width="2" stroke-linejoin="round"/><path d="m10 30 5 5" stroke="#14110f" stroke-width="2"/><path d="m27 13 4-4q2-2 4 0l3 3q2 2 0 4l-4 4Z" fill="#ff3b24" stroke="#14110f" stroke-width="2" stroke-linejoin="round"/><path d="m30 11 6 6" stroke="#fff9ec" stroke-width="1.4" stroke-linecap="round"/><path d="m7 38 8-3-5-5Z" fill="#14110f"/></svg></div>
 
 <div class="topline">Web design by Dopamine® · Websites for businesses and creatives</div>
 <header class="header"><div class="wrap nav"><a class="brand" href="#home" aria-label="Dopamine home"><span class="brand-mark">D.</span><span class="brand-name">Dopamine.<small>The Creator</small></span></a><nav class="links" id="links" aria-label="Main navigation"><a href="#work">Selected work</a><a href="#studio">Studio</a><a href="#services">Expertise</a><a href="#process">Approach</a><a href="#pricing">Packages</a><a href="#contact">Contact</a></nav><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button><a class="nav-cta" href="#contact">Start a project <span>↗</span></a><button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu +</button></div></header>
@@ -618,34 +627,62 @@ document.getElementById('year').textContent=new Date().getFullYear();
 const finePointer=matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches;
 if(finePointer){
  const brush=document.querySelector('.custom-cursor-brush');
- let frame=0,lastX=-100,lastY=-100,prevX=null,prevY=null,paintCount=0;
- const paintColors=['#ff3b24','#a600ff','#d9ff00','#a6f7ff'];
+ const canvas=document.getElementById('brush-paint-canvas');
+ const ctx=canvas.getContext('2d',{alpha:true});
+ let frame=0,lastX=null,lastY=null,prevX=null,prevY=null;
+ let width=window.innerWidth,height=window.innerHeight,dpr=Math.min(window.devicePixelRatio||1,2);
+ const resizePaintCanvas=()=>{
+  width=window.innerWidth;height=window.innerHeight;dpr=Math.min(window.devicePixelRatio||1,2);
+  canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);
+  canvas.style.width=width+'px';canvas.style.height=height+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+ };
+ resizePaintCanvas();window.addEventListener('resize',resizePaintCanvas,{passive:true});
+ const drawPaint=(x1,y1,x2,y2)=>{
+  const distance=Math.hypot(x2-x1,y2-y1);
+  if(distance<.5)return;
+  ctx.save();ctx.lineCap='round';ctx.lineJoin='round';
+  // Dark, uneven edge makes the stroke read as real paint rather than a digital laser.
+  ctx.globalAlpha=.82;ctx.strokeStyle='#14110f';ctx.lineWidth=21;
+  ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+  // Thick, opaque graffiti paint body.
+  ctx.globalAlpha=.96;ctx.strokeStyle='#ff3b24';ctx.lineWidth=16;
+  ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+  // A broken highlight gives the wet paint a raised, bristled texture.
+  ctx.globalAlpha=.55;ctx.strokeStyle='#ffb49f';ctx.lineWidth=3;
+  ctx.setLineDash([Math.max(3,distance*.22),Math.max(5,distance*.3)]);
+  ctx.beginPath();ctx.moveTo(x1-1,y1-1);ctx.lineTo(x2-1,y2-1);ctx.stroke();
+  ctx.restore();
+ };
  const moveCursor=e=>{
-  lastX=e.clientX;lastY=e.clientY;
+  const x=e.clientX,y=e.clientY;lastX=x;lastY=y;
   if(!frame)frame=requestAnimationFrame(()=>{
-   brush.style.transform='translate3d('+(lastX-30)+'px,'+(lastY-10)+'px,0)';
+   // Brush tip sits at the actual pointer, with the handle trailing up-right.
+   brush.style.transform='translate3d('+(lastX-7)+'px,'+(lastY-38)+'px,0)';
    brush.classList.add('visible');frame=0;
   });
-  const dx=prevX===null?99:lastX-prevX,dy=prevY===null?99:lastY-prevY;
-  if(Math.hypot(dx,dy)>17){
-   const fleck=document.createElement('span');
-   fleck.className='brush-paint-fleck';
-   fleck.setAttribute('aria-hidden','true');
-   fleck.style.left=(lastX+(Math.random()*8-4))+'px';
-   fleck.style.top=(lastY+(Math.random()*8-4))+'px';
-   fleck.style.setProperty('--paint',paintColors[paintCount++%paintColors.length]);
-   fleck.style.setProperty('--spin',(Math.random()*100-50)+'deg');
-   fleck.style.setProperty('--fleck-size',(4+Math.random()*6)+'px');
-   document.body.appendChild(fleck);
-   while(document.querySelectorAll('.brush-paint-fleck').length>14)document.querySelector('.brush-paint-fleck')?.remove();
-   window.setTimeout(()=>fleck.remove(),520);
-   prevX=lastX;prevY=lastY;
+  if(prevX!==null){
+   const distance=Math.hypot(x-prevX,y-prevY);
+   // Interpolate long pointer jumps so every stroke stays continuous.
+   const steps=Math.max(1,Math.ceil(distance/5));
+   let px=prevX,py=prevY;
+   for(let i=1;i<=steps;i++){
+    const nx=prevX+(x-prevX)*i/steps,ny=prevY+(y-prevY)*i/steps;
+    drawPaint(px,py,nx,ny);px=nx;py=ny;
+   }
   }
+  prevX=x;prevY=y;
  };
  window.addEventListener('pointermove',moveCursor,{passive:true});
+ const fadePaint=()=>{
+  // Slowly lift the paint away, rather than sprinkling short-lived particles.
+  ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.globalCompositeOperation='destination-out';ctx.fillStyle='rgba(0,0,0,0.018)';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.restore();
+  requestAnimationFrame(fadePaint);
+ };
+ requestAnimationFrame(fadePaint);
  document.addEventListener('pointerover',e=>{if(e.target.closest('a,button,input,textarea,select,label'))brush.classList.add('hovering')});
  document.addEventListener('pointerout',e=>{if(e.target.closest('a,button,input,textarea,select,label')&&!e.relatedTarget?.closest('a,button,input,textarea,select,label'))brush.classList.remove('hovering')});
- document.addEventListener('pointerleave',()=>brush.classList.remove('visible'));
+ document.addEventListener('pointerleave',()=>{brush.classList.remove('visible');prevX=null;prevY=null});
  document.addEventListener('pointerenter',()=>brush.classList.add('visible'));
  document.querySelectorAll('.btn,.nav-cta,.quick-start-options button,.choose').forEach(el=>{
   el.addEventListener('pointermove',e=>{
