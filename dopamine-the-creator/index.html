@@ -511,6 +511,59 @@ body{background-color:#f7f0df;color:#14110f;background-image:radial-gradient(#14
 [data-theme="dark"] .contact{background:#a6f7ff;color:#14110f}
 [data-theme="dark"] .field input,[data-theme="dark"] .field textarea,[data-theme="dark"] .field select{background:#fff9ec;color:#14110f}
 
+
+/* Rounded graffiti: keep the street-art energy, lose the boxy edges */
+:root{--curve-card:26px;--curve-image:28px;--curve-button:15px}
+.topline{border-bottom:0;border-radius:0 0 18px 18px;margin-inline:8px}
+.header{border-bottom:1px solid #14110f24}
+.brand-mark{border-radius:12px}
+.nav-cta,.btn{border-radius:var(--curve-button);box-shadow:4px 4px 0 #14110f}
+.nav-cta:hover,.btn:hover{transform:translateY(-3px);box-shadow:6px 6px 0 #14110f}
+.theme-toggle{border-radius:14px}
+.hero{overflow:hidden}
+.hero:before{right:12px;top:65px;transform:rotate(5deg)}
+.hero-art{border-radius:30px!important;border-width:3px;box-shadow:10px 10px 0 #ff3b24;overflow:hidden}
+.hero-art img{border-radius:26px;clip-path:inset(0 round 26px)}
+.ticker{border:0;border-radius:18px;margin-inline:10px;overflow:hidden}
+.ticker-inner span:after{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#ff3b24;color:#fff9ec}
+.project-image,.project:nth-child(even) .project-image{border-radius:24px!important;overflow:hidden;box-shadow:6px 6px 0 #a600ff}
+.project:nth-child(even) .project-image{box-shadow:6px 6px 0 #ff3b24}
+.project-image img{border-radius:21px}
+.project:hover .project-image{transform:translateY(-3px) rotate(-.4deg)}
+.project h3{letter-spacing:.015em}
+.manifesto{border:0;border-radius:30px;margin:18px 14px;overflow:hidden}
+.manifesto:after{right:14px;bottom:-34px;transform:rotate(-5deg)}
+.service,.step{border-radius:18px;transition:background .22s,transform .22s}
+.service:hover,.step:hover{transform:translateY(-3px)}
+.price-card,.price-card.featured{border-radius:26px;box-shadow:5px 6px 0 #14110f}
+.price-card.featured{box-shadow:6px 7px 0 #ff3b24}
+.price-card:hover{transform:translateY(-5px);box-shadow:8px 9px 0 #14110f}
+.contact{border:0;border-radius:32px;margin:16px 12px 0;overflow:hidden}
+.field input,.field textarea,.field select{border-radius:14px}
+.field input:focus,.field textarea:focus,.field select:focus{outline:2px solid #ff3b24;outline-offset:1px}
+.quick-start-options button{border-radius:14px}
+.foot{border-top:3px solid #ff3b24;border-radius:28px 28px 0 0;overflow:hidden}
+.custom-cursor-ring{border-radius:50%}
+.custom-cursor-ring.hovering{border-radius:50%}
+[data-theme="dark"] .header{border-bottom:1px solid #fff9ec24}
+@media(max-width:900px){
+ .hero-art{border-radius:24px!important;box-shadow:8px 8px 0 #ff3b24}
+ .hero-art img{clip-path:inset(0 round 21px)}
+ .manifesto{border-radius:24px;margin-inline:8px}
+ .contact{border-radius:24px;margin-inline:8px}
+}
+@media(max-width:650px){
+ .topline{margin-inline:5px;border-radius:0 0 12px 12px}
+ .hero-art{min-height:420px;border-radius:22px!important;box-shadow:6px 6px 0 #ff3b24}
+ .hero-art img{clip-path:inset(0 round 19px)}
+ .project-image,.project:nth-child(even) .project-image{border-radius:20px!important;box-shadow:4px 4px 0 #a600ff}
+ .project-image img{border-radius:17px}
+ .manifesto{border-radius:22px;margin:10px 5px}
+ .contact{border-radius:22px;margin:10px 5px 0}
+ .price-card,.price-card.featured{border-radius:22px}
+ .foot{border-radius:22px 22px 0 0}
+}
+
 </style>
 </head>
 <body>
