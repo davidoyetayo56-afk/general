@@ -159,6 +159,35 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset
 }
 @media(prefers-reduced-motion:reduce){.cursor-glow{display:none}.service,.step,.price-card{transition:none}.hero-art img{transition:none}}
 
+
+[data-theme="light"]{--paper:#f1f4f8;--paper2:#e5ebf3;--ink:#101827;--muted:#526078;--line:#17243b26;--red:#527d00;--red2:#709d14;color-scheme:light}
+[data-theme="light"] .header{background:#f1f4f8e8;border-color:#17243b1c}
+[data-theme="light"] .links a,[data-theme="light"] .links button{color:#344056}
+[data-theme="light"] .hero-copy{color:#526078}
+[data-theme="light"] .hero:before{background-image:linear-gradient(#324b700b 1px,transparent 1px),linear-gradient(90deg,#324b700b 1px,transparent 1px)}
+[data-theme="light"] .hero-art{background:#dce4ee;box-shadow:0 28px 70px #20334c1c}
+[data-theme="light"] .hero-art img{mix-blend-mode:normal;filter:saturate(.8) brightness(.9)}
+[data-theme="light"] .art-overlay{background:linear-gradient(180deg,#080b1200 15%,#080b127a 100%)}
+[data-theme="light"] .ticker{background:#e7edf4}
+[data-theme="light"] .manifesto{background:linear-gradient(135deg,#182235,#101724 65%,#1c293d);color:#f3f6ff}
+[data-theme="light"] .manifesto-copy{color:#c4cede}
+[data-theme="light"] .service,[data-theme="light"] .service:nth-child(even){background:linear-gradient(135deg,#fff,#edf2f8);border-color:#17243b22}
+[data-theme="light"] .service:hover{background:#fff;border-color:#527d0066}
+[data-theme="light"] #process{background:linear-gradient(180deg,#e7edf4,#f1f4f8)!important}
+[data-theme="light"] .step,[data-theme="light"] .step:nth-child(2){background:#fff;border-color:#17243b22}
+[data-theme="light"] .price-card{background:linear-gradient(155deg,#fff,#e9eef5);border-color:#17243b22}
+[data-theme="light"] .price-card.featured{background:linear-gradient(150deg,#e5f0d2,#f5f8ef);border-color:#527d0077}
+[data-theme="light"] .contact{background:linear-gradient(135deg,#e5ebf3,#f7f9fc);border-color:#17243b22}
+[data-theme="light"] .field label{color:#344056}
+[data-theme="light"] .field input,[data-theme="light"] .field textarea,[data-theme="light"] .field select{background:#fff;color:#101827;border-color:#17243b35}
+[data-theme="light"] .field input::placeholder,[data-theme="light"] .field textarea::placeholder{color:#758197}
+[data-theme="light"] .btn-dark{background:#101827;color:#f3f6ff;border-color:#101827}
+[data-theme="light"] .btn-dark:hover{background:#527d00;color:white;border-color:#527d00}
+[data-theme="light"] .btn-light{border-color:#344056;color:#101827}
+[data-theme="light"] .btn-light:hover{background:#dfe7f0}
+[data-theme="light"] .foot{background:#05070b;color:#f3f6ff}
+[data-theme="light"] .foot-links a{color:#b9c5d8}
+
 </style>
 </head>
 <body>
@@ -183,7 +212,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset
 <footer class="foot"><div class="wrap"><div class="foot-top"><a class="brand" href="#home"><span class="brand-mark">D.</span><span class="brand-name">Dopamine.<small>The Creator</small></span></a><nav class="foot-links" aria-label="Footer navigation"><a href="#work">Work</a><a href="#studio">Studio</a><a href="#services">Expertise</a><a href="#process">Approach</a><a href="#pricing">Packages</a><a href="#contact">Contact</a></nav></div><div class="foot-bottom"><span>© <span id="year"></span> Dopamine. The Creator</span><span>Independent digital studio · Made with intention</span></div></div></footer>
 <script>
 (()=>{'use strict';
-const themeButton=document.getElementById('theme-toggle');let savedTheme=null;try{savedTheme=localStorage.getItem('dopamine-theme')}catch(e){}if(savedTheme!=='light'){document.documentElement.dataset.theme='dark';themeButton.setAttribute('aria-label','Switch to light mode')}themeButton.addEventListener('click',()=>{const dark=document.documentElement.dataset.theme!=='dark';if(dark){document.documentElement.dataset.theme='dark';themeButton.setAttribute('aria-label','Switch to light mode')}else{delete document.documentElement.dataset.theme;themeButton.setAttribute('aria-label','Switch to dark mode')}try{localStorage.setItem('dopamine-theme',dark?'dark':'light')}catch(e){}});const menu=document.getElementById('menu'),links=document.getElementById('links');
+const themeButton=document.getElementById('theme-toggle');let savedTheme=null;try{savedTheme=localStorage.getItem('dopamine-theme')}catch(e){}if(savedTheme==='light'){document.documentElement.dataset.theme='light';themeButton.setAttribute('aria-label','Switch to dark mode')}else{document.documentElement.dataset.theme='dark';themeButton.setAttribute('aria-label','Switch to light mode')}themeButton.addEventListener('click',()=>{const dark=document.documentElement.dataset.theme!=='dark';if(dark){document.documentElement.dataset.theme='dark';themeButton.setAttribute('aria-label','Switch to light mode')}else{document.documentElement.dataset.theme='light';themeButton.setAttribute('aria-label','Switch to dark mode')}try{localStorage.setItem('dopamine-theme',dark?'dark':'light')}catch(e){}});const menu=document.getElementById('menu'),links=document.getElementById('links');
 menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'Close −':'Menu +';});
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu +';}));
 document.querySelectorAll('.choose').forEach(b=>b.addEventListener('click',()=>{document.getElementById('details').value='I am interested in the '+b.dataset.package+' package. Please help me scope the project.';document.getElementById('contact').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});setTimeout(()=>document.getElementById('name').focus({preventScroll:true}),450);}));
