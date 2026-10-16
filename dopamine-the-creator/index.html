@@ -278,16 +278,140 @@ html{scroll-behavior:smooth}
  .btn,.project-image img,.price-card{transition:none}
 }
 
+
+/* DOPAMINE ART DIRECTION: high contrast, hard edges, no image-covering labels */
+:root{--paper:#080609;--paper2:#130b10;--ink:#fff8fa;--muted:#c0adb5;--line:#ffffff2d;--red:#ff3155;--red2:#ff647b;--serif:'DM Sans',Arial,sans-serif;--sans:'DM Sans',Arial,sans-serif;--radius-xl:0px;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:#080609;color:#fff8fa}
+.topline{background:#ff3155;color:#080609;font-weight:800;letter-spacing:.13em}
+.header{background:#080609f5;border-bottom:1px solid #ffffff30;backdrop-filter:none}
+.brand-mark,.hero h1 em,.section-head h2 em,.contact h2 em,.project-meta span:first-child,.eyebrow,.hero-kicker{color:#ff3155}
+.brand-name small{color:#c0adb5}
+.links a,.links button{color:#e2d6dc}
+.links a:hover,.links button:hover{color:#ff3155}
+.nav-cta,.btn{border-radius:2px;border-width:1px;font-weight:700;transition:background .22s,color .22s,border-color .22s,transform .18s,box-shadow .22s}
+.nav-cta{background:#ff3155;color:#080609;border-color:#ff3155}
+.nav-cta:hover{background:#fff8fa;border-color:#fff8fa;color:#080609;transform:translateY(-2px)}
+.btn-dark{background:#ff3155;color:#080609;border-color:#ff3155}
+.btn-dark:hover{background:#fff8fa;color:#080609;border-color:#fff8fa;box-shadow:5px 5px 0 #ff3155}
+.btn-light{background:transparent;color:#fff8fa;border-color:#ffffff66}
+.btn-light:hover{background:#ff3155;color:#080609;border-color:#ff3155}
+.theme-toggle{border-radius:2px;border-color:#ffffff55}
+.theme-toggle:hover{background:#ff3155;border-color:#ff3155;color:#080609;transform:translateY(-2px) rotate(-5deg)}
+.hero{padding-top:76px;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:48px 48px;background-position:center top}
+.hero-grid{gap:5%}
+.hero h1{font-weight:800;letter-spacing:-.085em;line-height:.86;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:#ff3155}
+.hero-copy{color:#d2c4ca;line-height:1.8}
+.hero-kicker,.eyebrow{font-weight:800;letter-spacing:.14em}
+.hero-art{min-height:570px;border-radius:0!important;border:1px solid #ff3155;box-shadow:12px 12px 0 #ff3155;background:#100b0f;overflow:hidden}
+.hero-art:before{display:none!important}
+.hero-art img{mix-blend-mode:normal!important;filter:none!important;animation:hero-image-drift 20s ease-in-out infinite alternate;object-position:center;will-change:transform}
+.hero-art:hover img{transform:scale(1.055)}
+.art-overlay,.art-float,.art-caption{display:none!important}
+.hero-note{border-top:1px solid #ff315566;color:#c0adb5}
+.hero-note span:before{color:#ff3155}
+.quick-start-options button{border-radius:2px;border-color:#ffffff4d;color:#fff8fa;background:#100b0f}
+.quick-start-options button:hover{background:#ff3155;color:#080609;border-color:#ff3155;transform:translateY(-3px);box-shadow:4px 4px 0 #fff8fa}
+.ticker{background:#ff3155;border:0;padding:17px 0}
+.ticker-inner{color:#080609;font-style:normal;font-weight:900;letter-spacing:.12em}
+.ticker-inner span:after{color:#080609}
+.section{background:#080609}
+.section-head h2,.manifesto h2,.contact h2{font-weight:850;letter-spacing:-.075em;text-transform:uppercase}
+.section-head p,.manifesto-copy,.service p,.step p,.price-card p,.contact-copy{line-height:1.8}
+.projects{gap:48px 25px}
+.project-image{border-radius:0!important;background:#100b0f;border:1px solid #ffffff26;aspect-ratio:1.18;overflow:hidden}
+.project:nth-child(even) .project-image{aspect-ratio:.94}
+.project-image:after{content:none!important;display:none!important}
+.project-image img{filter:none!important;transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .3s}
+.project:hover .project-image{border-color:#ff3155}
+.project:hover .project-image img{transform:scale(1.045);filter:contrast(1.04)!important}
+.project h3,.service h3,.step h3,.price-card h3{font-family:var(--sans);font-weight:750;letter-spacing:-.045em}
+.project p{color:#c0adb5}
+.project a{border-color:#ff3155}
+.manifesto{background:#ff3155;color:#080609}
+.manifesto .eyebrow,.manifesto h2 em,.manifesto-copy{color:#080609}
+.manifesto h2 em{font-style:normal;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px}
+.services{border-color:#ffffff35}
+.service{border-color:#ffffff35}
+.service:nth-child(odd){border-right-color:#ffffff35}
+.service-num,.step b{color:#ff3155}
+.service:hover{background:#ff31550b}
+.process{border-color:#ffffff35}
+.step{border-right-color:#ffffff35}
+.price-card{border-radius:0;border-color:#ffffff35;background:#0d0a0d;transition:transform .25s,border-color .25s,box-shadow .25s}
+.price-card.featured{background:#180b11;border:1px solid #ff3155;box-shadow:6px 6px 0 #ff3155}
+.price-card:hover{transform:translate(-3px,-3px);border-color:#ff3155;box-shadow:6px 6px 0 #ff315533}
+.price-card .label{color:#ff3155}
+.contact{background:#130b10;border-top:1px solid #ff315566}
+.field label{color:#e2d6dc}
+.field input,.field textarea,.field select{color:#fff8fa;border-color:#ffffff40;background:transparent;border-radius:0}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#ff3155;box-shadow:0 1px 0 #ff3155}
+.field select option{background:#130b10;color:#fff8fa}
+.foot{background:#050405;color:#fff8fa;border-top:1px solid #ff315566}
+.foot .brand-mark{color:#ff3155}
+.foot-links a{color:#d2c4ca}
+.foot-links a:hover{color:#ff3155}
+.foot-bottom{border-top:0}
+.footer-signature{display:flex;align-items:center;gap:8px;color:#d2c4ca;font-weight:800;letter-spacing:.13em}
+.footer-mark{display:inline-grid;place-items:center;width:25px;height:25px;background:#ff3155;color:#080609;font-weight:900;letter-spacing:-.08em}
+.reveal{transform:translateY(24px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{transform:translateY(0)}
+.scroll-progress span{background:#ff3155}
+.dopamine-watermark{display:none!important}
+.custom-cursor-ring,.custom-cursor-dot{position:fixed;left:0;top:0;z-index:1000;pointer-events:none;opacity:0;will-change:transform}
+.custom-cursor-ring{width:30px;height:30px;border:1px solid #ff3155;border-radius:50%;transform:translate3d(-100px,-100px,0);transition:width .18s,height .18s,background .18s,border-color .18s,opacity .18s}
+.custom-cursor-dot{width:6px;height:6px;border-radius:50%;background:#ff3155;transform:translate3d(-100px,-100px,0);transition:opacity .18s}
+.custom-cursor-ring.visible,.custom-cursor-dot.visible{opacity:1}
+.custom-cursor-ring.hovering{width:46px;height:46px;background:#ff315526;border-color:#fff8fa}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ body,body a,body button,body input,body textarea,body select{cursor:none}
+ .custom-cursor-ring,.custom-cursor-dot{opacity:1}
+}
+@media(hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){
+ .custom-cursor-ring,.custom-cursor-dot{display:none!important}
+ body,body a,body button,body input,body textarea,body select{cursor:auto}
+ .hero-art img{animation:none!important}
+ .reveal{opacity:1;transform:none;transition:none}
+}
+[data-theme="light"]{--paper:#f5f0f2;--paper2:#e8dfe3;--ink:#171015;--muted:#5c4b53;--line:#17101530;--red:#e21e45;--red2:#b80c31;color-scheme:light;background:#f5f0f2}
+[data-theme="light"] body{background:#f5f0f2;color:#171015}
+[data-theme="light"] .header{background:#f5f0f2f5}
+[data-theme="light"] .links a,[data-theme="light"] .links button{color:#33242b}
+[data-theme="light"] .hero{background-image:linear-gradient(#1710150a 1px,transparent 1px),linear-gradient(90deg,#1710150a 1px,transparent 1px)}
+[data-theme="light"] .hero-copy,[data-theme="light"] .project p{color:#5c4b53}
+[data-theme="light"] .hero-art{background:#d9cbd1;box-shadow:12px 12px 0 #e21e45}
+[data-theme="light"] .hero-art img{filter:none!important}
+[data-theme="light"] .ticker{background:#e21e45}
+[data-theme="light"] .manifesto{background:#e21e45;color:#080609}
+[data-theme="light"] .price-card{background:#fff9fb}
+[data-theme="light"] .price-card.featured{background:#ffe7ed}
+[data-theme="light"] .contact{background:#e8dfe3}
+[data-theme="light"] .field label{color:#33242b}
+[data-theme="light"] .field input,[data-theme="light"] .field textarea,[data-theme="light"] .field select{color:#171015;border-color:#17101555}
+[data-theme="light"] .foot{background:#050405;color:#fff8fa}
+@media(max-width:900px){.hero-art{min-height:470px}.hero{padding-top:55px}}
+@media(max-width:650px){
+ .hero{padding-top:43px}
+ .hero h1{font-size:clamp(54px,14vw,90px);line-height:.9}
+ .hero-art{min-height:410px;box-shadow:7px 7px 0 #ff3155}
+ .project-image,.project:nth-child(even) .project-image{aspect-ratio:1.1}
+ .manifesto{padding:65px 0}
+ .manifesto h2{font-size:clamp(44px,13vw,64px)}
+ .quick-start-options button{padding:10px 12px}
+ .footer-signature{font-size:8px;letter-spacing:.08em}
+ .ticker-inner{animation-duration:20s}
+}
+
 </style>
 </head>
 <body>
-<div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div>
-<a class="dopamine-watermark" href="#home" aria-label="Dopamine registered mark, return to top"><span class="watermark-symbol">D.</span><span>DOPAMINE<sup>®</sup></span></a>
+<div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div><div class="custom-cursor-ring" aria-hidden="true"></div><div class="custom-cursor-dot" aria-hidden="true"></div>
 
 <div class="topline">Web design by Dopamine® · Websites for businesses and creatives</div>
 <header class="header"><div class="wrap nav"><a class="brand" href="#home" aria-label="Dopamine home"><span class="brand-mark">D.</span><span class="brand-name">Dopamine.<small>The Creator</small></span></a><nav class="links" id="links" aria-label="Main navigation"><a href="#work">Selected work</a><a href="#studio">Studio</a><a href="#services">Expertise</a><a href="#process">Approach</a><a href="#pricing">Packages</a><a href="#contact">Contact</a></nav><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button><a class="nav-cta" href="#contact">Start a project <span>↗</span></a><button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu +</button></div></header>
 <main id="home">
-<section class="hero"><div class="wrap hero-grid"><div><div class="hero-kicker">Websites for small businesses, brands and creators</div><h1>Your business<br>deserves a<br><em>better website.</em></h1><p class="hero-copy">I design and build professional websites that show people what you offer, help them trust your business, and make it easy to contact you. From a simple business page to a full online shop.</p><div class="hero-actions"><a class="btn btn-dark" href="#work">See what I can build <span>↗</span></a><a class="btn btn-light" href="#contact">Get a website</a></div><div class="quick-start" aria-label="Choose the kind of website you need"><span class="quick-start-label">What are you looking to build?</span><div class="quick-start-options"><button type="button" data-project="Brand website">Business website <span>↗</span></button><button type="button" data-project="Online store">Online shop <span>↗</span></button><button type="button" data-project="Portfolio">Portfolio <span>↗</span></button></div></div><div class="hero-note"><span>Designed with care</span><span>Simple to navigate</span><span>Built to adapt</span></div></div><div class="hero-art"><img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=88" alt="Sculptural contemporary architecture with dramatic lines and light" fetchpriority="high"><div class="art-overlay"></div><div class="art-float art-float-top"><span class="art-float-dot"></span> BUILT FOR REAL PEOPLE</div><div class="art-float art-float-bottom"><span>01</span><div><strong>Clear message.</strong><small>Easy for customers to understand.</small></div></div><div class="art-caption"><div><small>Web design · Built around your business</small><strong>Your next idea.<br><em>On the web.</em></strong></div><span class="art-index">D—01</span></div></div></div></section>
+<section class="hero"><div class="wrap hero-grid"><div><div class="hero-kicker">Websites for small businesses, brands and creators</div><h1>Your business<br>deserves a<br><em>better website.</em></h1><p class="hero-copy">I design and build professional websites that show people what you offer, help them trust your business, and make it easy to contact you. From a simple business page to a full online shop.</p><div class="hero-actions"><a class="btn btn-dark" href="#work">See what I can build <span>↗</span></a><a class="btn btn-light" href="#contact">Get a website</a></div><div class="quick-start" aria-label="Choose the kind of website you need"><span class="quick-start-label">What are you looking to build?</span><div class="quick-start-options"><button type="button" data-project="Brand website">Business website <span>↗</span></button><button type="button" data-project="Online store">Online shop <span>↗</span></button><button type="button" data-project="Portfolio">Portfolio <span>↗</span></button></div></div><div class="hero-note"><span>Designed with care</span><span>Simple to navigate</span><span>Built to adapt</span></div></div><div class="hero-art"><img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=88" alt="Sculptural contemporary architecture with dramatic lines and light" fetchpriority="high"></div></div></section>
 <div class="ticker"><div class="ticker-track"><div class="ticker-inner"><span>Clear design</span><span>Works on mobile</span><span>Made for your business</span><span>Easy enquiries</span><span>Clear design</span><span>Works on mobile</span><span>Made for your business</span><span>Easy enquiries</span></div></div></div>
 <section class="section" id="work"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">01 / Selected concepts</div><h2>See how your<br><em>website could look.</em></h2></div><p>These are concept projects, created to show different directions a website could take. They are examples of my design approach, not commissioned client work.</p></div><div class="projects">
 <article class="project reveal"><a class="project-image" href="#contact" aria-label="Discuss a fashion and lifestyle website"><img loading="lazy" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=88" alt="Contemporary fashion editorial with a confident, minimalist look"></a><div class="project-meta"><span>01 / Fashion & lifestyle</span><span>Brand experience</span></div><h3>Style, with a point of view.</h3><p>An online shop concept that helps customers browse products and understand the brand.</p><a href="#contact">Discuss a similar project ↗</a></article>
@@ -301,7 +425,7 @@ html{scroll-behavior:smooth}
 <section class="section" id="pricing"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">05 / Ways to begin</div><h2>Good work, with<br><em>a clear scope.</em></h2></div><p>These are starting prices. Once we discuss your needs, I'll confirm what's included and agree the total with you before starting.</p></div><div class="pricing"><article class="price-card reveal"><span class="label">01 / Essential</span><h3>The First Impression</h3><div class="price">From ₦80,000</div><p>A one-page website for your business, service or new idea. Clear, polished and easy to follow.</p><button class="btn btn-light choose" data-package="The First Impression">Discuss this package ↗</button></article><article class="price-card featured reveal"><span class="label">02 / Signature</span><h3>The Full Story</h3><div class="price">From ₦180,000</div><p>A full website with the key pages customers need to learn about your business and contact you.</p><button class="btn btn-dark choose" data-package="The Full Story">Discuss this package ↗</button></article><article class="price-card reveal"><span class="label">03 / Bespoke</span><h3>The Special Build</h3><div class="price">Let's scope it</div><p>For online shops or websites with special features. We'll discuss what you need and price it fairly.</p><button class="btn btn-light choose" data-package="The Special Build">Discuss this package ↗</button></article></div><p class="notice">The final price depends on the work. A domain name, hosting and paid tools may cost extra.</p></div></section>
 <section class="contact" id="contact"><div class="wrap contact-grid"><div><div class="eyebrow">06 / Start a conversation</div><h2>Have a good<br><em>idea?</em></h2><p class="contact-copy">Tell me a little about your business and what you need. The form will prepare a WhatsApp message for you to review before sending.</p><p class="contact-copy">Rather message me directly? <a href="https://wa.me/2347039725895" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:4px">Message Dopamine ↗</a></p></div><div><form class="form" id="project-form"><div class="field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" required placeholder="Name"></div><div class="field"><label for="business">Business / brand</label><input id="business" name="business" autocomplete="organization" placeholder="Brand name"></div><div class="field"><label for="type">Project type *</label><select id="type" name="type" required><option value="">Choose one</option><option>Brand website</option><option>Online store</option><option>Portfolio</option><option>Landing page</option><option>Interactive experience</option><option>Not sure yet</option></select></div><div class="field"><label for="budget">Budget</label><select id="budget" name="budget"><option>Let's discuss scope</option><option>Under ₦80,000</option><option>₦80,000–₦180,000</option><option>₦180,000+</option></select></div><div class="field full"><label for="details">What do you want your website to do?</label><textarea id="details" name="details" placeholder="What should your website help you do?"></textarea></div><div class="field full"><button class="btn btn-dark" type="submit">Prepare WhatsApp brief ↗</button><p class="notice" id="form-status" aria-live="polite"></p></div></form></div></div></section>
 </main>
-<footer class="foot"><div class="wrap"><div class="foot-top"><a class="brand" href="#home"><span class="brand-mark">D.</span><span class="brand-name">Dopamine.<small>The Creator</small></span></a><nav class="foot-links" aria-label="Footer navigation"><a href="#work">Work</a><a href="#studio">Studio</a><a href="#services">Expertise</a><a href="#process">Approach</a><a href="#pricing">Packages</a><a href="#contact">Contact</a></nav></div><div class="foot-bottom"><span>© <span id="year"></span> Dopamine. The Creator</span><span>Web design by Dopamine® · Made with care</span></div></div></footer>
+<footer class="foot"><div class="wrap"><div class="foot-top"><a class="brand" href="#home"><span class="brand-mark">D.</span><span class="brand-name">Dopamine.<small>The Creator</small></span></a><nav class="foot-links" aria-label="Footer navigation"><a href="#work">Work</a><a href="#studio">Studio</a><a href="#services">Expertise</a><a href="#process">Approach</a><a href="#pricing">Packages</a><a href="#contact">Contact</a></nav></div><div class="foot-bottom"><span>© <span id="year"></span> Dopamine. The Creator</span><span class="footer-signature"><span class="footer-mark">D.</span> DOPAMINE® · WEB DESIGN BY DOPAMINE</span></div></div></footer>
 <script>
 (()=>{'use strict';
 const themeButton=document.getElementById('theme-toggle');let savedTheme=null;try{savedTheme=localStorage.getItem('dopamine-theme')}catch(e){}if(savedTheme==='light'){document.documentElement.dataset.theme='light';themeButton.setAttribute('aria-label','Switch to dark mode')}else{document.documentElement.dataset.theme='dark';themeButton.setAttribute('aria-label','Switch to light mode')}themeButton.addEventListener('click',()=>{const dark=document.documentElement.dataset.theme!=='dark';if(dark){document.documentElement.dataset.theme='dark';themeButton.setAttribute('aria-label','Switch to light mode')}else{document.documentElement.dataset.theme='light';themeButton.setAttribute('aria-label','Switch to dark mode')}try{localStorage.setItem('dopamine-theme',dark?'dark':'light')}catch(e){}});const menu=document.getElementById('menu'),links=document.getElementById('links');
@@ -310,6 +434,43 @@ links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.cla
 document.querySelectorAll('.choose').forEach(b=>b.addEventListener('click',()=>{document.getElementById('details').value='I am interested in the '+b.dataset.package+' package. Please help me scope the project.';document.getElementById('contact').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});setTimeout(()=>document.getElementById('name').focus({preventScroll:true}),450);}));
 document.getElementById('project-form').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.currentTarget);const msg=['Hi Dopamine, I would like to discuss a website project.','Name: '+d.get('name'),'Business: '+(d.get('business')||'Not specified'),'Project type: '+d.get('type'),'Budget: '+(d.get('budget')||'Let’s discuss scope'),'Details: '+(d.get('details')||'I would like to discuss my idea.')].join('\n');document.getElementById('form-status').textContent='Your message is ready in WhatsApp. Review it there before sending.';window.open('https://wa.me/2347039725895?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');});
 document.getElementById('year').textContent=new Date().getFullYear();
+
+const finePointer=matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches;
+if(finePointer){
+ const ring=document.querySelector('.custom-cursor-ring');
+ const dot=document.querySelector('.custom-cursor-dot');
+ let frame=0,lastX=-100,lastY=-100;
+ const moveCursor=e=>{
+  lastX=e.clientX;lastY=e.clientY;
+  if(frame)return;
+  frame=requestAnimationFrame(()=>{
+   ring.style.transform='translate3d('+(lastX-15)+'px,'+(lastY-15)+'px,0)';
+   dot.style.transform='translate3d('+(lastX-3)+'px,'+(lastY-3)+'px,0)';
+   ring.classList.add('visible');dot.classList.add('visible');frame=0;
+  });
+ };
+ window.addEventListener('pointermove',moveCursor,{passive:true});
+ document.addEventListener('pointerover',e=>{
+  if(e.target.closest('a,button,input,textarea,select,label'))ring.classList.add('hovering');
+ });
+ document.addEventListener('pointerout',e=>{
+  if(e.target.closest('a,button,input,textarea,select,label')&&!e.relatedTarget?.closest('a,button,input,textarea,select,label'))ring.classList.remove('hovering');
+ });
+ document.addEventListener('pointerdown',()=>ring.classList.add('hovering'));
+ document.addEventListener('pointerup',()=>{if(!document.querySelector('a:hover,button:hover,input:hover,textarea:hover,select:hover'))ring.classList.remove('hovering')});
+ document.querySelectorAll('.btn,.nav-cta,.quick-start-options button,.choose').forEach(el=>{
+  el.addEventListener('pointermove',e=>{
+   const r=el.getBoundingClientRect();
+   const x=(e.clientX-r.left-r.width/2)*.07;
+   const y=(e.clientY-r.top-r.height/2)*.09;
+   el.style.transform='translate3d('+x+'px,'+y+'px,0)';
+  });
+  el.addEventListener('pointerleave',()=>{el.style.transform=''});
+ });
+ document.addEventListener('pointerleave',()=>{ring.classList.remove('visible');dot.classList.remove('visible')});
+ document.addEventListener('pointerenter',()=>{ring.classList.add('visible');dot.classList.add('visible')});
+}
+
 
 document.querySelectorAll('[data-project]').forEach(button=>button.addEventListener('click',()=>{
  const projectType=button.dataset.project;
