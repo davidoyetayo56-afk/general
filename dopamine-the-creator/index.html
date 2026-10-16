@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#080b12"><meta name="description" content="Dopamine. The Creator designs and builds clear, modern websites for brands, small businesses, portfolios and online shops.">
-<title>Dopamine. The Creator | Websites built to move your business forward</title>
+<meta name="theme-color" content="#f7f0df"><meta name="description" content="Dopamine. The Creator designs and builds clear, modern websites for brands, small businesses, portfolios and online shops.">
+<title>Dopamine. The Creator® | Loud ideas. Better websites.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <style>
@@ -403,6 +403,114 @@ body{background:#080609;color:#fff8fa}
  .ticker-inner{animation-duration:20s}
 }
 
+
+/* DOPAMINE GRAFFITI EDITION: raw texture, paint marks, gallery energy */
+:root{--paper:#f7f0df;--paper2:#eee1c5;--ink:#14110f;--muted:#514a43;--line:#14110f4a;--red:#ff3b24;--red2:#d92b1d;--max:1320px;--serif:'Bebas Neue',Impact,'Arial Narrow',sans-serif;--sans:'DM Sans',Arial,sans-serif;color-scheme:light}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&display=swap');
+html{scroll-behavior:smooth;scroll-padding-top:90px;background:#f7f0df}
+body{background-color:#f7f0df;color:#14110f;background-image:radial-gradient(#14110f18 .8px,transparent .8px);background-size:7px 7px}
+.wrap{width:min(var(--max),calc(100% - 80px))}
+.topline{height:32px;background:#d9ff00;color:#111;font-weight:900;letter-spacing:.18em;border-bottom:2px solid #14110f}
+.header{background:#f7f0dff2;border-bottom:2px solid #14110f;backdrop-filter:none}
+.brand-mark{font-family:'Permanent Marker',cursive;font-style:normal;font-size:35px;color:#ff3b24;text-shadow:2px 2px 0 #d9ff00}
+.brand-name{font-weight:900;letter-spacing:.12em;color:#14110f}
+.brand-name small{color:#514a43;font-weight:700}
+.links a,.links button{color:#14110f;font-weight:700;text-transform:uppercase;font-size:10px}
+.links a:hover,.links button:hover{color:#ff3b24}
+.nav-cta,.btn{border:2px solid #14110f;border-radius:0;box-shadow:4px 4px 0 #14110f;font-weight:900;letter-spacing:.1em;transition:transform .18s,box-shadow .18s,background .18s,color .18s}
+.nav-cta{background:#d9ff00;color:#14110f;border-color:#14110f}
+.nav-cta:hover,.btn:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 #14110f}
+.btn-dark{background:#ff3b24;color:#fff;border-color:#14110f}
+.btn-dark:hover{background:#d9ff00;color:#14110f;border-color:#14110f}
+.btn-light{background:#fff9ec;color:#14110f;border-color:#14110f}
+.btn-light:hover{background:#a6f7ff;color:#14110f}
+.theme-toggle{border:2px solid #14110f;border-radius:0;box-shadow:3px 3px 0 #14110f}
+.theme-toggle:hover{background:#ff3b24;border-color:#14110f;transform:rotate(-7deg)}
+.hero{position:relative;padding:72px 0 68px;isolation:isolate;background-color:#f7f0df;background-image:radial-gradient(#14110f1d .8px,transparent .8px);background-size:7px 7px;overflow:hidden}
+.hero:before{content:"ART IS NOT A TEMPLATE";position:absolute;z-index:-1;right:-34px;top:90px;font:clamp(25px,4vw,60px)/1 'Permanent Marker',cursive;color:#ff3b24;opacity:.13;transform:rotate(8deg);white-space:nowrap;pointer-events:none}
+.hero:after{content:"✳";position:absolute;z-index:-1;left:45%;bottom:4%;font:clamp(100px,17vw,230px)/.7 'Permanent Marker',cursive;color:#a600ff;opacity:.11;transform:rotate(-16deg);pointer-events:none}
+.hero-grid{grid-template-columns:1fr .9fr;gap:6%;align-items:center}
+.hero-kicker,.eyebrow{font-size:10px;letter-spacing:.13em;font-weight:900;color:#14110f;text-transform:uppercase}
+.hero-kicker:before,.eyebrow:before{width:20px;height:5px;background:#ff3b24}
+.hero h1{font:400 clamp(86px,12.5vw,174px)/.77 'Bebas Neue',Impact,sans-serif;letter-spacing:-.025em;text-transform:uppercase;margin:28px 0 24px;max-width:760px;text-shadow:3px 3px 0 #d9ff00}
+.hero h1 em{font:400 .94em/.8 'Permanent Marker',cursive;letter-spacing:-.04em;color:#ff3b24;text-shadow:4px 4px 0 #a6f7ff;display:inline-block;transform:rotate(-5deg);margin-left:5px}
+.hero-copy{max-width:440px;color:#28221e;font-size:15px;line-height:1.75;font-weight:500}
+.hero-actions{gap:14px}
+.hero-note{border-top:2px solid #14110f;color:#14110f;font-weight:800}
+.hero-note span:before{color:#ff3b24;font-weight:900}
+.hero-art{min-height:600px;position:relative;background:#a6f7ff;overflow:hidden;border:3px solid #14110f;box-shadow:12px 12px 0 #ff3b24}
+.hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;mix-blend-mode:normal!important;filter:contrast(1.05) saturate(1.15)!important;transition:transform .7s cubic-bezier(.2,.7,.2,1);animation:wall-drift 20s ease-in-out infinite alternate}
+.hero-art:hover img{transform:scale(1.06) rotate(1deg);animation-play-state:paused}
+.art-overlay,.art-caption{display:none!important}
+.ticker{background:#d9ff00;border-block:2px solid #14110f;padding:17px 0}
+.ticker-inner{color:#14110f;font:24px/1 'Permanent Marker',cursive;letter-spacing:.015em;gap:36px}
+.ticker-inner span:after{content:"✳";color:#ff3b24;font:20px 'Permanent Marker',cursive;margin-left:36px}
+.section{background-color:#f7f0df;background-image:radial-gradient(#14110f15 .7px,transparent .7px);background-size:7px 7px}
+.section-head h2,.manifesto h2,.contact h2{font:400 clamp(52px,7.5vw,104px)/.88 'Bebas Neue',Impact,sans-serif;letter-spacing:-.015em;text-transform:uppercase}
+.section-head h2 em{font:400 .86em/.9 'Permanent Marker',cursive;color:#ff3b24;letter-spacing:-.05em}
+.section-head p{color:#514a43;font-weight:500}
+.projects{gap:52px 28px}
+.project:nth-child(even){margin-top:110px}
+.project-image{aspect-ratio:1.08;background:#a6f7ff;border:3px solid #14110f;box-shadow:7px 7px 0 #a600ff;overflow:hidden}
+.project:nth-child(even) .project-image{aspect-ratio:.94;box-shadow:7px 7px 0 #ff3b24}
+.project-image img{mix-blend-mode:normal!important;filter:saturate(1.2) contrast(1.04)!important;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.project:hover .project-image img{transform:scale(1.07) rotate(-.6deg)}
+.project-image:after{content:none!important;display:none!important}
+.project-meta{color:#514a43;font-weight:900}
+.project-meta span:first-child{color:#ff3b24}
+.project h3{font:400 clamp(30px,4vw,50px)/.95 'Bebas Neue',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em}
+.project p{color:#514a43;font-size:13px}
+.project a{border-bottom:3px solid #ff3b24;font-weight:900}
+.manifesto{background:#a600ff;color:#fff9ec;border-block:3px solid #14110f;position:relative;overflow:hidden}
+.manifesto:after{content:"MAKE ART";position:absolute;right:-20px;bottom:-50px;font:clamp(90px,16vw,240px)/.8 'Permanent Marker',cursive;color:#d9ff00;opacity:.12;transform:rotate(-9deg);pointer-events:none}
+.manifesto .eyebrow,.manifesto h2 em,.manifesto-copy{color:#fff9ec}
+.manifesto h2 em{font:400 .86em 'Permanent Marker',cursive;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:9px}
+.services,.service,.process,.step{border-color:#14110f55}
+.service-num,.step b{color:#ff3b24;font-family:'Permanent Marker',cursive}
+.service h3,.step h3{font:400 32px/1 'Bebas Neue',Impact,sans-serif;text-transform:uppercase}
+.service:hover{background:#d9ff003b}
+.price-card{border:2px solid #14110f;border-radius:0;background:#fff9ec;box-shadow:6px 6px 0 #14110f;transition:transform .2s,box-shadow .2s}
+.price-card.featured{background:#d9ff00;border:2px solid #14110f;box-shadow:8px 8px 0 #ff3b24}
+.price-card:hover{transform:translate(-4px,-4px);box-shadow:10px 10px 0 #14110f}
+.price-card .label{color:#ff3b24;font-weight:900}
+.contact{background:#a6f7ff;border-top:3px solid #14110f;position:relative}
+.contact h2 em{font:400 .86em 'Permanent Marker',cursive;color:#ff3b24}
+.contact-copy{color:#28221e}
+.field label{color:#14110f;font-weight:900}
+.field input,.field textarea,.field select{border:2px solid #14110f;border-radius:0;background:#fff9ec;color:#14110f}
+.field input:focus,.field textarea:focus,.field select:focus{outline:3px solid #ff3b24;box-shadow:4px 4px 0 #a600ff}
+.field select option{background:#fff9ec;color:#14110f}
+.foot{background:#14110f;color:#fff9ec;border-top:3px solid #ff3b24}
+.foot .brand-mark{color:#d9ff00;text-shadow:2px 2px 0 #ff3b24}
+.foot-links a{color:#fff9ec}
+.foot-links a:hover{color:#d9ff00}
+.foot-bottom{border-top:1px solid #ffffff3a}
+.footer-signature{color:#fff9ec}
+.footer-mark{background:#d9ff00;color:#14110f}
+.reveal{transform:translateY(28px) rotate(.4deg);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{transform:translateY(0) rotate(0)}
+.custom-cursor-ring{border:2px solid #a600ff;background:#d9ff0012}
+.custom-cursor-dot{background:#ff3b24}
+.custom-cursor-ring.hovering{width:48px;height:48px;background:#d9ff0066;border-color:#ff3b24}
+.quick-start-options button{border:2px solid #14110f;border-radius:0;background:#fff9ec;color:#14110f;box-shadow:3px 3px 0 #14110f;font-weight:900}
+.quick-start-options button:hover{background:#d9ff00;transform:translate(-2px,-2px);box-shadow:5px 5px 0 #14110f}
+@keyframes wall-drift{0%{transform:scale(1.01) translate(0,0)}100%{transform:scale(1.08) translate(-1%,1%)}}
+@media(max-width:900px){.hero-art{min-height:470px}.hero{padding-top:55px}}
+@media(max-width:650px){.wrap{width:calc(100% - 36px)}.hero{padding:43px 0 50px}.hero h1{font-size:clamp(82px,20vw,126px);line-height:.8}.hero-art{min-height:420px;box-shadow:7px 7px 0 #ff3b24}.hero-grid{gap:36px}.project:nth-child(even){margin-top:0}.project-image,.project:nth-child(even) .project-image{aspect-ratio:1.05;box-shadow:5px 5px 0 #a600ff}.section{padding:75px 0}.section-head h2{font-size:clamp(52px,14vw,78px)}.manifesto{padding:68px 0}.ticker-inner{font-size:20px;animation-duration:18s}.footer-signature{font-size:8px;letter-spacing:.08em}}
+@media(prefers-reduced-motion:reduce){.hero-art img,.ticker-inner{animation:none!important}.reveal{opacity:1;transform:none;transition:none}}
+[data-theme="dark"]{--paper:#161016;--paper2:#251725;--ink:#fff9ec;--muted:#d4c4d2;--line:#fff9ec40;--red:#ff3b24;--red2:#d9ff00;color-scheme:dark}
+[data-theme="dark"] body,[data-theme="dark"] .hero,[data-theme="dark"] .section{background-color:#161016;background-image:radial-gradient(#fff9ec18 .7px,transparent .7px);color:#fff9ec}
+[data-theme="dark"] .header{background:#161016f2}
+[data-theme="dark"] .brand-name,[data-theme="dark"] .links a,[data-theme="dark"] .links button{color:#fff9ec}
+[data-theme="dark"] .brand-name small,[data-theme="dark"] .hero-copy,[data-theme="dark"] .section-head p,[data-theme="dark"] .project p,[data-theme="dark"] .project-meta{color:#d4c4d2}
+[data-theme="dark"] .hero h1{color:#fff9ec}
+[data-theme="dark"] .hero-art{background:#a6f7ff}
+[data-theme="dark"] .manifesto{background:#a600ff;color:#fff9ec}
+[data-theme="dark"] .price-card{background:#251725;color:#fff9ec}
+[data-theme="dark"] .price-card.featured{background:#d9ff00;color:#14110f}
+[data-theme="dark"] .contact{background:#a6f7ff;color:#14110f}
+[data-theme="dark"] .field input,[data-theme="dark"] .field textarea,[data-theme="dark"] .field select{background:#fff9ec;color:#14110f}
+
 </style>
 </head>
 <body>
@@ -411,15 +519,15 @@ body{background:#080609;color:#fff8fa}
 <div class="topline">Web design by Dopamine® · Websites for businesses and creatives</div>
 <header class="header"><div class="wrap nav"><a class="brand" href="#home" aria-label="Dopamine home"><span class="brand-mark">D.</span><span class="brand-name">Dopamine.<small>The Creator</small></span></a><nav class="links" id="links" aria-label="Main navigation"><a href="#work">Selected work</a><a href="#studio">Studio</a><a href="#services">Expertise</a><a href="#process">Approach</a><a href="#pricing">Packages</a><a href="#contact">Contact</a></nav><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button><a class="nav-cta" href="#contact">Start a project <span>↗</span></a><button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu +</button></div></header>
 <main id="home">
-<section class="hero"><div class="wrap hero-grid"><div><div class="hero-kicker">Websites for small businesses, brands and creators</div><h1>Your business<br>deserves a<br><em>better website.</em></h1><p class="hero-copy">I design and build professional websites that show people what you offer, help them trust your business, and make it easy to contact you. From a simple business page to a full online shop.</p><div class="hero-actions"><a class="btn btn-dark" href="#work">See what I can build <span>↗</span></a><a class="btn btn-light" href="#contact">Get a website</a></div><div class="quick-start" aria-label="Choose the kind of website you need"><span class="quick-start-label">What are you looking to build?</span><div class="quick-start-options"><button type="button" data-project="Brand website">Business website <span>↗</span></button><button type="button" data-project="Online store">Online shop <span>↗</span></button><button type="button" data-project="Portfolio">Portfolio <span>↗</span></button></div></div><div class="hero-note"><span>Designed with care</span><span>Simple to navigate</span><span>Built to adapt</span></div></div><div class="hero-art"><img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=88" alt="Sculptural contemporary architecture with dramatic lines and light" fetchpriority="high"></div></div></section>
+<section class="hero"><div class="wrap hero-grid"><div><div class="hero-kicker">Independent web design · Made to stand out</div><h1>MAKE<br>SOME<br><em>NOISE.</em></h1><p class="hero-copy">I build bold, easy-to-use websites for businesses, brands and creators. Show people what you do, give them a reason to trust you, and make it easy to get in touch. Your idea deserves more than a template.</p><div class="hero-actions"><a class="btn btn-dark" href="#work">PEEP THE WORK <span>↗</span></a><a class="btn btn-light" href="#contact">LET’S BUILD IT</a></div><div class="quick-start" aria-label="Choose the kind of website you need"><span class="quick-start-label">What are you looking to build?</span><div class="quick-start-options"><button type="button" data-project="Brand website">Business website <span>↗</span></button><button type="button" data-project="Online store">Online shop <span>↗</span></button><button type="button" data-project="Portfolio">Portfolio <span>↗</span></button></div></div><div class="hero-note"><span>Designed with care</span><span>Simple to navigate</span><span>Built to adapt</span></div></div><div class="hero-art"><img src="https://images.unsplash.com/photo-1767640389080-e449f51c8bdf?auto=format&fit=crop&w=1600&q=88" alt="Street artist painting a vibrant graffiti mural" fetchpriority="high"></div></div></section>
 <div class="ticker"><div class="ticker-track"><div class="ticker-inner"><span>Clear design</span><span>Works on mobile</span><span>Made for your business</span><span>Easy enquiries</span><span>Clear design</span><span>Works on mobile</span><span>Made for your business</span><span>Easy enquiries</span></div></div></div>
-<section class="section" id="work"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">01 / Selected concepts</div><h2>See how your<br><em>website could look.</em></h2></div><p>These are concept projects, created to show different directions a website could take. They are examples of my design approach, not commissioned client work.</p></div><div class="projects">
-<article class="project reveal"><a class="project-image" href="#contact" aria-label="Discuss a fashion and lifestyle website"><img loading="lazy" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=88" alt="Contemporary fashion editorial with a confident, minimalist look"></a><div class="project-meta"><span>01 / Fashion & lifestyle</span><span>Brand experience</span></div><h3>Style, with a point of view.</h3><p>An online shop concept that helps customers browse products and understand the brand.</p><a href="#contact">Discuss a similar project ↗</a></article>
-<article class="project reveal"><a class="project-image" href="#contact" aria-label="Discuss a culture and hospitality website"><img loading="lazy" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=88" alt="Inviting café interior with considered lighting and design"></a><div class="project-meta"><span>02 / Hospitality</span><span>Digital presence</span></div><h3>A place to pause.</h3><p>A café website concept designed to show the atmosphere, menu and key details.</p><a href="#contact">Discuss a similar project ↗</a></article>
-<article class="project reveal"><a class="project-image" href="#contact" aria-label="Discuss a design studio portfolio"><img loading="lazy" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=88" alt="A bright, modern creative studio with collaborative work tables"></a><div class="project-meta"><span>03 / Creative studio</span><span>Portfolio</span></div><h3>A home for good ideas.</h3><p>A portfolio website that puts the best work front and centre.</p><a href="#contact">Discuss a similar project ↗</a></article>
-<article class="project reveal"><a class="project-image" href="#contact" aria-label="Discuss a product and commerce website"><img loading="lazy" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=88" alt="Minimal wristwatch product photography with a clean, premium finish"></a><div class="project-meta"><span>04 / Product & commerce</span><span>Digital commerce</span></div><h3>Made for the details.</h3><p>A simple product website that helps visitors find what they need.</p><a href="#contact">Discuss a similar project ↗</a></article>
+<section class="section" id="work"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">01 / The creative wall</div><h2>Not another<br><em>copy-paste website.</em></h2></div><p>Every project here is a concept study, not a commissioned client job. It shows how I can turn a brand’s personality into a bold, usable website.</p></div><div class="projects">
+<article class="project reveal"><a class="project-image" href="#contact" aria-label="Discuss a fashion and lifestyle website"><img loading="lazy" src="https://images.unsplash.com/photo-1758198046728-99a115f975c1?auto=format&fit=crop&w=1200&q=88" alt="Colorful graffiti art on a weathered wall"></a><div class="project-meta"><span>01 / Fashion & lifestyle</span><span>Brand experience</span></div><h3>Style, with a point of view.</h3><p>An online shop concept that helps customers browse products and understand the brand.</p><a href="#contact">Discuss a similar project ↗</a></article>
+<article class="project reveal"><a class="project-image" href="#contact" aria-label="Discuss a culture and hospitality website"><img loading="lazy" src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=1200&q=88" alt="Expressive abstract artwork with bold colours"></a><div class="project-meta"><span>02 / Hospitality</span><span>Digital presence</span></div><h3>A place to pause.</h3><p>A café website concept designed to show the atmosphere, menu and key details.</p><a href="#contact">Discuss a similar project ↗</a></article>
+<article class="project reveal"><a class="project-image" href="#contact" aria-label="Discuss a design studio portfolio"><img loading="lazy" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=88" alt="Artist working on a colourful painting in a studio"></a><div class="project-meta"><span>03 / Creative studio</span><span>Portfolio</span></div><h3>A home for good ideas.</h3><p>A portfolio website that puts the best work front and centre.</p><a href="#contact">Discuss a similar project ↗</a></article>
+<article class="project reveal"><a class="project-image" href="#contact" aria-label="Discuss a product and commerce website"><img loading="lazy" src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1200&q=88" alt="Vibrant contemporary artwork with expressive brushwork"></a><div class="project-meta"><span>04 / Product & commerce</span><span>Digital commerce</span></div><h3>Made for the details.</h3><p>A simple product website that helps visitors find what they need.</p><a href="#contact">Discuss a similar project ↗</a></article>
 </div></div></section>
-<section class="manifesto" id="studio"><div class="wrap manifesto-grid"><div class="eyebrow">02 / The studio</div><div><h2>Not louder.<br><em>Just more you.</em></h2><p class="manifesto-copy">Dopamine is my web design brand. I help businesses and creators get online with websites that look professional and make sense to their customers. I handle the design and build, keep you updated as we go, and make sure the finished site works on mobile as well as desktop.</p></div></div></section>
+<section class="manifesto" id="studio"><div class="wrap manifesto-grid"><div class="eyebrow">02 / The studio</div><div><h2>Not louder.<br><em>Just more you.</em></h2><p class="manifesto-copy">Dopamine is my creative web design brand. I make websites with personality: bold visuals, clear words and interactions that feel good to use. The goal is simple: help your business look legit online and make it easier for people to choose you.</p></div></div></section>
 <section class="section" id="services"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">03 / What we do</div><h2>What I can<br><em>help you build.</em></h2></div><p>Need a first website, an online shop or a better home for your work? Here are the main ways I can help.</p></div><div class="services"><article class="service reveal"><span class="service-num">01</span><div><h3>Brand websites</h3><p>Modern websites that explain what you do and look great on phones, tablets and computers.</p></div></article><article class="service reveal"><span class="service-num">02</span><div><h3>Digital storefronts</h3><p>Online shops where customers can browse products and shop with less fuss.</p></div></article><article class="service reveal"><span class="service-num">03</span><div><h3>Portfolio & identity</h3><p>Portfolio websites that show your work clearly and help people see what makes you different.</p></div></article><article class="service reveal"><span class="service-num">04</span><div><h3>Interactive experiences</h3><p>Interactive details that respond when people click, scroll or explore, without making the site confusing.</p></div></article></div></div></section>
 <section class="section" id="process" style="background:#e6dfd5"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">04 / How we work</div><h2>A clear process.<br><em>No theatre.</em></h2></div><p>I keep the process simple, with clear updates so you know what's happening at each stage.</p></div><div class="process"><article class="step reveal"><b>01 / Listen</b><h3>Find the point.</h3><p>We talk about your business, your customers and what the website needs to do.</p></article><article class="step reveal"><b>02 / Shape</b><h3>Set the direction.</h3><p>We plan the pages and look before getting into the small details.</p></article><article class="step reveal"><b>03 / Build</b><h3>Make it work.</h3><p>We build the site so it works across screen sizes and its buttons and forms really work.</p></article><article class="step reveal"><b>04 / Refine</b><h3>Ready for people.</h3><p>We check the site, fix issues and get it ready to launch.</p></article></div></div></section>
 <section class="section" id="pricing"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">05 / Ways to begin</div><h2>Good work, with<br><em>a clear scope.</em></h2></div><p>These are starting prices. Once we discuss your needs, I'll confirm what's included and agree the total with you before starting.</p></div><div class="pricing"><article class="price-card reveal"><span class="label">01 / Essential</span><h3>The First Impression</h3><div class="price">From ₦80,000</div><p>A one-page website for your business, service or new idea. Clear, polished and easy to follow.</p><button class="btn btn-light choose" data-package="The First Impression">Discuss this package ↗</button></article><article class="price-card featured reveal"><span class="label">02 / Signature</span><h3>The Full Story</h3><div class="price">From ₦180,000</div><p>A full website with the key pages customers need to learn about your business and contact you.</p><button class="btn btn-dark choose" data-package="The Full Story">Discuss this package ↗</button></article><article class="price-card reveal"><span class="label">03 / Bespoke</span><h3>The Special Build</h3><div class="price">Let's scope it</div><p>For online shops or websites with special features. We'll discuss what you need and price it fairly.</p><button class="btn btn-light choose" data-package="The Special Build">Discuss this package ↗</button></article></div><p class="notice">The final price depends on the work. A domain name, hosting and paid tools may cost extra.</p></div></section>
